@@ -56,7 +56,7 @@ client.login
 ### Backup
 Endpoint for backup related requests 
 ```
-licenses = client.tenant_licenses
+subscriptions = client.subscriptions
 ```
 
 |Resource|API endpoint|
@@ -78,7 +78,8 @@ licenses = client.tenant_licenses
 ### Alerts
 Returns Alerts for a provided Email Migration Order ID or Backup service ID.
 ```
-alerts = client.alerts(subscription_id)
+subscriptions = client.subscriptions
+alerts = client.alerts(subscriptions.first.id)
 
 ```
 
