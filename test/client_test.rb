@@ -46,6 +46,8 @@ describe 'client' do
     assert @client.autodiscover(id), '.autodiscover(id)' 
   end
   it "#4 GET /Alerts/id" do
+    subscription_id = @client.subscriptions.first.id
+    alerts = @client.alerts(subscription_id)
     assert alerts, '.alerts(.subscriptions.first.id)'
     @client.mark_as_complete(alerts.first.Id)
     assert alerts.count > @client.alerts(subscription_id).count, "less alerts as one is completed"
