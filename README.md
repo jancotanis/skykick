@@ -1,0 +1,95 @@
+# Skykick Office365 backup API
+
+This is a wrapper for the Skykick Office365 backup API. You can see the API endpoints here https://developers.skykick.com/apis
+
+Currently only the GET requests to endpoints /Backup and /Alerts are implemented (readonly).
+
+## Installation
+
+Add this line to your application's Gemfile:
+
+```ruby
+gem 'skykick'
+```
+
+And then execute:
+
+    $ bundle install
+
+Or install it yourself as:
+
+    $ gem install skykick
+
+## Usage
+
+Before you start making the requests to API provide the client id and client secret and email/password using the configuration wrapping.
+
+```
+require 'skykick'
+
+Skykick.configure do |config|
+  config.client_id = ENV["SKYKICK_CLIENT_ID"]
+  config.client_secret = ENV["SKYKICK_CLIENT_SECRET"]
+end
+@client = Skykick.client()
+@client.login
+
+dc = @client.datacenters
+
+dc.each do |t|
+  puts "#{t.name}"
+end
+```
+
+## Resources
+### Authentication
+```
+# setup configuration
+#
+client.login
+```
+|Resource|API endpoint|Description|
+|:--|:--|:--|
+|.auth_token or .login|https://apis.skykick.com/auth/token|
+
+
+### Backup
+Endpoint for backup related requests 
+```
+licenses = client.tenant_licenses
+```
+
+|Resource|API endpoint|
+|:--|:--|
+|autodiscover                     |https://apis.skykick.com/Backup/{id}/autodiscover                    |
+|datacenters                      |https://apis.skykick.com/Backup/datacenters                          |
+|exchange_mailboxe                |https://apis.skykick.com/Backup/{id}/mailboxes/{mailboxId}           |
+|exchange_mailboxes               |https://apis.skykick.com/Backup/{id}/mailboxes                       |
+|lastsnapshotstats                |https://apis.skykick.com/Backup/{backupServiceId}/lastsnapshotstats  |
+|retention_periods                |https://apis.skykick.com/Backup/{id}/retentionperiod                 |
+|sharePoint_sites                 |https://apis.skykick.com/Backup/{id}/sites                           |
+|sku                              |https://apis.skykick.com/Backup/{id}/sku                             |
+|storage_settings                 |https://apis.skykick.com/Backup/{id}/storagesettings                 |
+|subscription_settings            |https://apis.skykick.com/Backup/{id}/subscriptionsettings            |
+|subscriptions                    |https://apis.skykick.com/Backup/                                     |
+|partner_subscriptions(partner_id)|https://apis.skykick.com/Backup/{partner_id}                         |
+
+
+### Alerts
+Returns Alerts for a provided Email Migration Order ID or Backup service ID.
+```
+alerts = client.alerts(subscription_id)
+
+```
+
+|Resource|API endpoint|
+|:--|:--|
+|.alerts|/Alerts|
+
+## Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/jancotanis/integra365.
+
+## License
+
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
