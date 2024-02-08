@@ -9,11 +9,12 @@ File.delete(CLIENT_LOGGER) if File.exist?(CLIENT_LOGGER)
 describe 'client' do
   before do
     Dotenv.load
+    Skykick.reset
     Skykick.configure do |config|
       config.client_id = ENV["SKYKICK_CLIENT_ID"]
       config.client_secret = ENV["SKYKICK_CLIENT_SECRET"]
     end
-    @client = Skykick.client()
+    @client = Skykick.client({ logger: Logger.new(CLIENT_LOGGER) })
     @client.login
   end
   it "#1 GET /Backup/datacenters" do

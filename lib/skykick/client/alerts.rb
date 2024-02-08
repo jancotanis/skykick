@@ -10,7 +10,7 @@ module Skykick
         # This endpoint supports the following OData query parameters: $top
         # $top - default of 25 and max of 500 
         # this is not implemented
-        get("Alerts/#{id}?$top=500")
+        get_paged("Alerts/#{id}")
       end
 
       # Mark an Alert as complete.
