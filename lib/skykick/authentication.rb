@@ -1,4 +1,4 @@
-require 'json'
+require File.expand_path('error', __dir__)
 require 'uri'
 
 module Skykick
@@ -7,6 +7,8 @@ module Skykick
     # Authorize to the Skykick portal and return access_token
     # @see https://developers.skykick.com/Guides/Authentication
     def auth_token(options = {})
+      raise ConfigurationError.new 'Client id and/or secret not configured' unless client_id && client_secret
+
       c = connection
       c.basic_auth(client_id, client_secret)
       response = c.post('/auth/token') do |request|
@@ -15,6 +17,10 @@ module Skykick
       end
 
       api_process_token(response.body)
+
+      self.access_token
+    rescue Faraday::ForbiddenError => e
+      raise AuthenticationError.new 'Unauthorized; response ' + e.to_s
     end
     alias login auth_token
 
@@ -28,13 +34,12 @@ module Skykick
     end
 
     def api_process_token(response)
-      at = self.access_token = response['access_token']
-      self.token_type        = response['token_type']
-      self.refresh_token     = response['refresh_token']
-      self.token_expires     = response['expires_in']
-      raise StandardError.new 'Could not find valid access_token; response ' + response.to_s if at.nil? || at.empty?
+      self.access_token  = response['access_token']
+      self.token_type    = response['token_type']
+      self.refresh_token = response['refresh_token']
+      self.token_expires = response['expires_in']
 
-      at
+      raise AuthorizationError.new 'Could not find valid access_token; response ' + response.to_s if self.access_token.nil? || self.access_token.empty?
     end
   end
 end
