@@ -10,7 +10,7 @@ module Skykick
       raise ConfigurationError.new 'Client id and/or secret not configured' unless client_id && client_secret
 
       c = connection
-      c.basic_auth(client_id, client_secret)
+      c.request :authorization, :basic, client_id, client_secret
       response = c.post('/auth/token') do |request|
         request.headers['Content-Type'] = 'application/x-www-form-urlencoded'
         request.body = URI.encode_www_form( api_access_token_params )

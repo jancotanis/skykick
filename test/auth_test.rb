@@ -1,6 +1,6 @@
-require 'Dotenv'
+require 'dotenv'
 require 'logger'
-require "test_helper"
+require 'test_helper'
 
 AUTH_LOGGER = "auth_test.log"
 File.delete(AUTH_LOGGER) if File.exist?(AUTH_LOGGER)

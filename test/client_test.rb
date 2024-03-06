@@ -1,6 +1,6 @@
-require 'Dotenv'
+require 'dotenv'
 require 'logger'
-require "test_helper"
+require 'test_helper'
 
 CLIENT_LOGGER = "client_test.log"
 File.delete(CLIENT_LOGGER) if File.exist?(CLIENT_LOGGER)
