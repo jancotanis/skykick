@@ -8,3 +8,6 @@
 
 ## [0.2.0] - 2024-02-20
 - Exception handling harmonized
+
+## [0.2.1] - 2024-03-06
+- Upgrade faraday 2
