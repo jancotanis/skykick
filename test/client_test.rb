@@ -6,7 +6,6 @@ require 'test_helper'
 CLIENT_LOGGER = 'client_test.log'
 File.delete(CLIENT_LOGGER) if File.exist?(CLIENT_LOGGER)
 
-
 describe 'client' do
   before do
     Skykick.reset
@@ -20,16 +19,16 @@ describe 'client' do
   it '#1 GET /Backup/datacenters' do
     dc = @client.datacenters
 
-    assert dc.any?, '.count > 0' 
-    refute_empty dc.first.name, '.name not empty' 
+    assert dc.any?, '.count > 0'
+    refute_empty dc.first.name, '.name not empty'
   end
   it '#2 GET /Backup/id/subscriptionsettings' do
     subs = @client.subscriptions
-    assert subs.any?, '.count > 0' 
+    assert subs.any?, '.count > 0'
 
     # get details and chekc if correct company name
-    sub = @client.subscription_settings( subs.first.id )
-    assert value(sub.CustomerInformation.CompanyName).must_equal(subs.first.companyName), ' check subscription settings with subscription' 
+    sub = @client.subscription_settings(subs.first.id)
+    assert value(sub.CustomerInformation.CompanyName).must_equal(subs.first.companyName), ' check subscription settings with subscription'
   end
   it '#3 GET /Backup/id/*' do
     sub = @client.subscriptions.first
@@ -43,7 +42,7 @@ describe 'client' do
     assert mbxs, '.exchange_mailboxes(id)'
     mbx = mbxs.IndividualMailboxes.first
     assert @client.exchange_mailbox(id, mbx.SubscriptionId).any? if mbx
-    assert @client.autodiscover(id), '.autodiscover(id)' 
+    assert @client.autodiscover(id), '.autodiscover(id)'
   end
   it '#4 GET /Alerts/id' do
     subscription_id = @client.subscriptions.first.id
