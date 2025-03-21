@@ -1,9 +1,11 @@
 # Skykick Office365 backup API
+
 [![Version](https://img.shields.io/gem/v/skykick.svg)](https://rubygems.org/gems/skykick)
 [![Maintainability](https://api.codeclimate.com/v1/badges/a340908aaf944745eeda/maintainability)](https://codeclimate.com/github/jancotanis/skykick/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/a340908aaf944745eeda/test_coverage)](https://codeclimate.com/github/jancotanis/skykick/test_coverage)
 
-This is a wrapper for the Skykick Office365 backup API. You can see the API endpoints here https://developers.skykick.com/apis
+This is a wrapper for the Skykick Office365 backup API.
+You can see the [API endpoints](https://developers.skykick.com/apis)
 
 Currently only the GET requests to endpoints /Backup and /Alerts are implemented (readonly).
 
@@ -17,15 +19,20 @@ gem 'skykick'
 
 And then execute:
 
-    $ bundle install
+```console
+> bundle install
+```
 
 Or install it yourself as:
 
-    $ gem install skykick
+```console
+> gem install skykick
+```
 
 ## Usage
 
-Before you start making the requests to API provide the client id and client secret and email/password using the configuration wrapping.
+Before you start making the requests to API provide the client id and client secret and
+email/password using the configuration wrapping.
 
 ```ruby
 require 'skykick'
@@ -45,19 +52,23 @@ end
 ```
 
 ## Resources
+
 ### Authentication
+
 ```ruby
 # setup configuration
 #
 client.login
 ```
-|Resource|API endpoint|Description|
-|:--|:--|:--|
+
+|Resource|API endpoint|
+|:--|:--|
 |.auth_token or .login|https://apis.skykick.com/auth/token|
 
-
 ### Backup
-Endpoint for backup related requests 
+
+Endpoint for backup related requests
+
 ```ruby
 subscriptions = client.subscriptions
 ```
@@ -77,9 +88,10 @@ subscriptions = client.subscriptions
 |subscriptions                    |https://apis.skykick.com/Backup/                                     |
 |partner_subscriptions(partner_id)|https://apis.skykick.com/Backup/{partner_id}                         |
 
-
 ### Alerts
+
 Returns Alerts for a provided Email Migration Order ID or Backup service ID.
+
 ```ruby
 subscriptions = client.subscriptions
 alerts = client.alerts(subscriptions.first.id)
@@ -92,7 +104,7 @@ alerts = client.alerts(subscriptions.first.id)
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/jancotanis/skykick.
+Bug reports and pull requests are welcome on [GitHub](https://github.com/jancotanis/skykick).
 
 ## License
 
