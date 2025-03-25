@@ -8,7 +8,6 @@ module Skykick
     #
     # @see https://developers.skykick.com/ Skykick Developer Documentation
     module Backup
-
       # Retrieves a list of supported Azure data centers.
       # @return [Array<Hash>] A list of Azure data centers supported by Skykick.
       # @example Fetch available data centers

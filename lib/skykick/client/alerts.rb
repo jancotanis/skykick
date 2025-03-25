@@ -7,7 +7,6 @@ module Skykick
     #
     # @see https://developers.skykick.com/ Skykick Developer Documentation
     module Alerts
-
       # Retrieves the first 500 alerts for a given Email Migration Order ID or Backup Service ID.
       # This method utilizes OData query parameters like `$top`, which defaults to 25 results
       # and allows a maximum of 500 results per call.

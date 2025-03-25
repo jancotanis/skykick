@@ -7,7 +7,8 @@
 This is a wrapper for the Skykick Office365 backup API.
 You can see the [API endpoints](https://developers.skykick.com/apis)
 
-Currently only the GET requests to endpoints /Backup and /Alerts are implemented (readonly).
+Currently only the GET requests to endpoints /Backup and /Alerts
+are implemented (readonly).
 
 ## Installation
 
@@ -31,8 +32,8 @@ Or install it yourself as:
 
 ## Usage
 
-Before you start making the requests to API provide the client id and client secret and
-email/password using the configuration wrapping.
+Before you start making the requests to API provide the client id and client secret
+and email/password using the configuration wrapping.
 
 ```ruby
 require 'skykick'
@@ -75,18 +76,18 @@ subscriptions = client.subscriptions
 
 |Resource|API endpoint|
 |:--|:--|
-|autodiscover                     |https://apis.skykick.com/Backup/{id}/autodiscover                    |
-|datacenters                      |https://apis.skykick.com/Backup/datacenters                          |
-|exchange_mailboxe                |https://apis.skykick.com/Backup/{id}/mailboxes/{mailboxId}           |
-|exchange_mailboxes               |https://apis.skykick.com/Backup/{id}/mailboxes                       |
-|lastsnapshotstats                |https://apis.skykick.com/Backup/{backupServiceId}/lastsnapshotstats  |
-|retention_periods                |https://apis.skykick.com/Backup/{id}/retentionperiod                 |
-|sharePoint_sites                 |https://apis.skykick.com/Backup/{id}/sites                           |
-|sku                              |https://apis.skykick.com/Backup/{id}/sku                             |
-|storage_settings                 |https://apis.skykick.com/Backup/{id}/storagesettings                 |
-|subscription_settings            |https://apis.skykick.com/Backup/{id}/subscriptionsettings            |
-|subscriptions                    |https://apis.skykick.com/Backup/                                     |
-|partner_subscriptions(partner_id)|https://apis.skykick.com/Backup/{partner_id}                         |
+|autodiscover          |https://apis.skykick.com/Backup/{id}/autodiscover|
+|datacenters           |https://apis.skykick.com/Backup/datacenters|
+|exchange_mailboxe     |https://apis.skykick.com/Backup/{id}/mailboxes/{mailboxId}|
+|exchange_mailboxes    |https://apis.skykick.com/Backup/{id}/mailboxes|
+|lastsnapshotstats     |https://apis.skykick.com/Backup/{backupServiceId}/lastsnapshotstats|
+|retention_periods     |https://apis.skykick.com/Backup/{id}/retentionperiod|
+|sharePoint_sites      |https://apis.skykick.com/Backup/{id}/sites|
+|sku                   |https://apis.skykick.com/Backup/{id}/sku|
+|storage_settings      |https://apis.skykick.com/Backup/{id}/storagesettings|
+|subscription_settings |https://apis.skykick.com/Backup/{id}/subscriptionsettings|
+|subscriptions         |https://apis.skykick.com/Backup/|
+|partner_subscriptions(partner_id)|https://apis.skykick.com/Backup/{partner_id}|
 
 ### Alerts
 
