@@ -64,7 +64,7 @@ client.login
 
 |Resource|API endpoint|
 |:--|:--|
-|.auth_token or .login|https://apis.skykick.com/auth/token|
+|.auth_token or .login|https://apis.cloudservices.connectwise.com/auth/token|
 
 ### Backup
 
@@ -76,18 +76,18 @@ subscriptions = client.subscriptions
 
 |Resource|API endpoint|
 |:--|:--|
-|autodiscover          |https://apis.skykick.com/Backup/{id}/autodiscover|
-|datacenters           |https://apis.skykick.com/Backup/datacenters|
-|exchange_mailboxe     |https://apis.skykick.com/Backup/{id}/mailboxes/{mailboxId}|
-|exchange_mailboxes    |https://apis.skykick.com/Backup/{id}/mailboxes|
-|lastsnapshotstats     |https://apis.skykick.com/Backup/{backupServiceId}/lastsnapshotstats|
-|retention_periods     |https://apis.skykick.com/Backup/{id}/retentionperiod|
-|sharePoint_sites      |https://apis.skykick.com/Backup/{id}/sites|
-|sku                   |https://apis.skykick.com/Backup/{id}/sku|
-|storage_settings      |https://apis.skykick.com/Backup/{id}/storagesettings|
-|subscription_settings |https://apis.skykick.com/Backup/{id}/subscriptionsettings|
-|subscriptions         |https://apis.skykick.com/Backup/|
-|partner_subscriptions(partner_id)|https://apis.skykick.com/Backup/{partner_id}|
+|autodiscover          |https://apis.cloudservices.connectwise.com/Backup/{id}/autodiscover|
+|datacenters           |https://apis.cloudservices.connectwise.com/Backup/datacenters|
+|exchange_mailboxe     |https://apis.cloudservices.connectwise.com/Backup/{id}/mailboxes/{mailboxId}|
+|exchange_mailboxes    |https://apis.cloudservices.connectwise.com/Backup/{id}/mailboxes|
+|lastsnapshotstats     |https://apis.cloudservices.connectwise.com/Backup/{backupServiceId}/lastsnapshotstats|
+|retention_periods     |https://apis.cloudservices.connectwise.com/Backup/{id}/retentionperiod|
+|sharePoint_sites      |https://apis.cloudservices.connectwise.com/Backup/{id}/sites|
+|sku                   |https://apis.cloudservices.connectwise.com/Backup/{id}/sku|
+|storage_settings      |https://apis.cloudservices.connectwise.com/Backup/{id}/storagesettings|
+|subscription_settings |https://apis.cloudservices.connectwise.com/Backup/{id}/subscriptionsettings|
+|subscriptions         |https://apis.cloudservices.connectwise.com/Backup/|
+|partner_subscriptions(partner_id)|https://apis.cloudservices.connectwise.com/Backup/{partner_id}|
 
 ### Alerts
 

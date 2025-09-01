@@ -15,7 +15,7 @@ module Skykick
   extend WrAPI::RespondTo
 
   # Default API endpoint for the Skykick service.
-  DEFAULT_ENDPOINT = 'https://apis.skykick.com'
+  DEFAULT_ENDPOINT = 'https://apis.cloudservices.connectwise.com'
 
   # Default User-Agent header sent with API requests, including gem version information.
   DEFAULT_UA = "Skykick Ruby API wrapper #{Skykick::VERSION}"

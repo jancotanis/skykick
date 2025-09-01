@@ -19,3 +19,7 @@
 ## [0.2.2] - 2025-03-21
 
 - updated documentation, filter subscription key from logs
+
+## [0.3.0] - 2025-09-01
+
+- updated api endpoint to https://apis.cloudservices.connectwise.com
